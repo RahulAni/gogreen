@@ -1,0 +1,33 @@
+.bg{
+    background-image: url("./assets/img/main.jpg");
+    min-height: 100vh;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+}
+.main-title{
+    color: #ffffff;
+    font-size: 4vw;
+}
+.center{
+    text-align: center;
+}
+.mg-top-15{
+    margin-top: 15px;
+}
+::placeholder{
+    font-size: 16px;
+}
+
+@media (max-width: 767px) {
+    .main-title{
+        font-size: 8vw
+    }
+    .padding{
+        padding: 5px 25px;
+    }
+}
