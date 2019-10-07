@@ -2,15 +2,27 @@
     <h2 class="main-title padding">How can we Go Green</h2>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 padding">
-            <input type="text" class="form-control" [(ngModel)]="soil" placeholder="Enter The Soil Name"/>
+            <input type="text" matInput class="form-control" [(ngModel)]="selectedsoil" [matAutocomplete]="auto"
+                [formControl]="myControlSoils" placeholder="Enter The Soil Name" />
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let soil of filteredSoils | async" [value]="soil">
+                    {{soil}}
+                </mat-option>
+            </mat-autocomplete>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 padding">
-            <input type="text" class="form-control" [(ngModel)]="plant" placeholder="Enter The Soil Name"/>
+            <input type="text" matInput class="form-control" [(ngModel)]="selectedseed" [matAutocomplete]="auto"
+                [formControl]="myControlSeeds" placeholder="Enter The Seed Name" />
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let seed of filteredSeeds | async" [value]="seed">
+                    {{seed}}
+                </mat-option>
+            </mat-autocomplete>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center mg-top-15">
-            <button class="btn btn-lg" (click)="search()">Search</button>
+            <button class="btn btn-lg" mat-raised-button (click)="search()">Search</button>
         </div>
     </div>
 </div>
